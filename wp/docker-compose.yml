@@ -1,4 +1,4 @@
-version: '3'
+version: '4'
 services:
   web:
     image: nginx:alpine
@@ -8,14 +8,14 @@ services:
       - ./data:/var/www/
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
-      - php
+      - wp-cli
       
-  php:
+  wp-cli:
     build:
       context: .
       dockerfile: Dockerfile
-    image: maniknp/php:1.4-php8.2-alpine
-    container_name: app-php 
+    image: maniknp/wp-cli:1.0-php8.2-alpine
+    container_name: wp-cli-php
     volumes:
       - ./data:/var/www/
     # depends_on:

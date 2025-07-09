@@ -57,7 +57,7 @@ RUN sed -i 's/listen = 127.0.0.1:9000/listen = 9000/' /usr/local/etc/php-fpm.d/w
 
 
 
-COPY ./php.ini-dev /usr/local/etc/php/php.ini
+# COPY ./php.ini-dev /usr/local/etc/php/php.ini
 
 # Set group www-data as the owner of the /var/www folder
 RUN chown -R www-data:www-data /var/www
