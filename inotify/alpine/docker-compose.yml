@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   brotli-watcher:
-    image: maniknp/inotify:brotli-alpine-3.21.3
+    image: maniknp/inotify:brotli-gzip-zstd-alpine-3.21.3
     container_name: inotify-container
     build:
       context: .        # Directory with Dockerfile and script
