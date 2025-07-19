@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  brotli-watcher:
+    image: maniknp/inotify:brotli-alpine-3.21.3
+    container_name: inotify-container
+    build:
+      context: .        # Directory with Dockerfile and script
+      dockerfile: Dockerfile
+    volumes:
+      - /workspaces/docker-images/inotify/src/plugins:/var/www/public/wp-cotent/plugins
+      - /workspaces/docker-images/inotify/src/themes:/var/www/public/wp-cotent/themes
+    restart: unless-stopped
+    tty: true
