@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  brotli-watcher:
+    image: maniknp/crontab:alpine-3.21.3
+    container_name: crontab-container
+    build:
+      context: .        
+      dockerfile: Dockerfile
+    volumes:
+      - ./script.sh:/app/script.sh
+    restart: unless-stopped
+    tty: true
