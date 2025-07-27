@@ -26,7 +26,9 @@ RUN apk add --no-cache --virtual .build-deps \
     libssh-dev \
     libstdc++ \
     libc++ \
-    curl-dev
+    curl-dev \
+    musl-dev \ 
+    libxml2-dev
 
 # Configure and install PHP extensions
 RUN docker-php-ext-configure gd --with-jpeg --with-webp \

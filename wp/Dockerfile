@@ -56,6 +56,11 @@ RUN sed -i 's/listen = 127.0.0.1:9000/listen = 9000/' /usr/local/etc/php-fpm.d/w
     && sed -i 's|;access.log = log/$pool.access.log|access.log = /var/log/php-fpm/www.access.log|' /usr/local/etc/php-fpm.d/www.conf
 
 
+RUN mkdir /docker-entrypoint.d/
+RUN chmod -R +x /docker-entrypoint.d/
+
+COPY docker-php-entrypoint.sh /usr/local/bin/docker-php-entrypoint
+RUN chmod +x /usr/local/bin/docker-php-entrypoint
 
 # COPY ./php.ini-dev /usr/local/etc/php/php.ini
 
@@ -66,3 +71,4 @@ RUN chown -R www-data:www-data /var/www
 
 USER www-data
 WORKDIR /var/www/
+

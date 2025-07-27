@@ -3,6 +3,10 @@ FROM alpine:3.21.3
 # Install necessary packages
 RUN apk add --no-cache bash curl busybox-suid
 
+# busybox-suid	 ==> Same tools, but with root permission support
+# busybox	==> Lightweight CLI tools, non-setuid (safer)
+
+
 # Create working directory
 WORKDIR /app
 

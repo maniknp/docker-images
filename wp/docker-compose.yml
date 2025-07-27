@@ -14,10 +14,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: maniknp/wp-cli:1.0-php8.2-alpine
+    image: maniknp/wp-cli:1.1-php8.2-alpine
     container_name: wp-cli-php
     volumes:
       - ./data:/var/www/
+      - ./docker-entrypoint.d:/docker-entrypoint.d
     # depends_on:
     #   - db
       

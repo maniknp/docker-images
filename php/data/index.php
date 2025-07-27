@@ -23,7 +23,7 @@ $required_extensions = [
     'pdo_sqlite', 'standard', 'posix', 'random', 'readline', 'Reflection', 'Phar',
     'SimpleXML', 'tokenizer', 'xml', 'xmlreader', 'xmlwriter', 'mysqlnd', 'cgi-fcgi',
     'gd', 'imagick', 'memcached', 'mysqli', 'pdo_mysql', 'redis', 'sodium', 'zip',
-    'Zend OPcache'
+    'Zend OPcache','soap'
 ];
 echo "<div style='display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0;'>";
 foreach ($required_extensions as $ext) {
